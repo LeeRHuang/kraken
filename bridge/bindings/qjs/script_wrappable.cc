@@ -8,7 +8,7 @@
 
 namespace kraken {
 
-ScriptWrappable::ScriptWrappable(JSContext* ctx): GarbageCollected<ScriptWrappable>(ctx) {}
+ScriptWrappable::ScriptWrappable(JSContext* ctx) : GarbageCollected<ScriptWrappable>(ctx) {}
 
 JSValue ScriptWrappable::toQuickJS() {
   if (m_wrapped) {
@@ -73,4 +73,4 @@ void ScriptWrappable::initializeQuickJSObject() {
   m_wrapped = true;
 }
 
-}
+}  // namespace kraken

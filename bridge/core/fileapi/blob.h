@@ -18,6 +18,7 @@ class BlobBuilder;
 
 class Blob : public ScriptWrappable {
   DEFINE_WRAPPERTYPEINFO();
+
  public:
   static Blob* create(JSContext* ctx);
   static Blob* create(JSContext* ctx, std::vector<uint8_t>&& data);
@@ -25,7 +26,7 @@ class Blob : public ScriptWrappable {
 
   Blob() = delete;
   explicit Blob(JSContext* ctx);
-  explicit Blob(JSContext* ctx, std::vector<uint8_t>&& data) : _size(data.size()), _data(std::move(data)), ScriptWrappable(ctx) {};
+  explicit Blob(JSContext* ctx, std::vector<uint8_t>&& data) : _size(data.size()), _data(std::move(data)), ScriptWrappable(ctx){};
   explicit Blob(JSContext* ctx, std::vector<uint8_t>&& data, std::string& mime) : mimeType(mime), _size(data.size()), _data(std::move(data)), ScriptWrappable(ctx){};
 
   /// get an pointer of bytes data from JSBlob

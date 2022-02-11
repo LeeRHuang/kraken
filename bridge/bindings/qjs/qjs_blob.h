@@ -7,8 +7,8 @@
 #define KRAKENBRIDGE_QJS_BLOB_H
 
 #include <quickjs/quickjs.h>
-#include "wrapper_type_info.h"
 #include "core/executing_context.h"
+#include "wrapper_type_info.h"
 
 namespace kraken {
 
@@ -18,9 +18,7 @@ class QJSBlob final {
  public:
   static void install(ExecutingContext* context);
 
-  static WrapperTypeInfo* getWrapperTypeInfo() {
-    return const_cast<WrapperTypeInfo*>(&m_wrapperTypeInfo);
-  }
+  static WrapperTypeInfo* getWrapperTypeInfo() { return const_cast<WrapperTypeInfo*>(&m_wrapperTypeInfo); }
 
  private:
   static JSValue constructorCallback(JSContext* ctx, JSValue func_obj, JSValue this_val, int argc, JSValue* argv, int flags);
@@ -33,6 +31,6 @@ class QJSBlob final {
   friend class Blob;
 };
 
-}
+}  // namespace kraken
 
 #endif  // KRAKENBRIDGE_QJS_BLOB_H

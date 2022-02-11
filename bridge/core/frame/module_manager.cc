@@ -55,7 +55,12 @@ void handleInvokeModuleUnexpectedCallback(void* callbackContext, int32_t context
   static_assert("Unexpected module callback, please check your invokeModule implementation on the dart side.");
 }
 
-ScriptValue ModuleManager::__kraken_invoke_module__(ExecutingContext* context, ScriptValue& moduleNameValue, ScriptValue& methodValue, ScriptValue& paramsValue, QJSFunction* callback, ExceptionState* exception) {
+ScriptValue ModuleManager::__kraken_invoke_module__(ExecutingContext* context,
+                                                    ScriptValue& moduleNameValue,
+                                                    ScriptValue& methodValue,
+                                                    ScriptValue& paramsValue,
+                                                    QJSFunction* callback,
+                                                    ExceptionState* exception) {
   std::unique_ptr<NativeString> moduleName = moduleNameValue.toNativeString();
   std::unique_ptr<NativeString> method = methodValue.toNativeString();
   std::unique_ptr<NativeString> params;

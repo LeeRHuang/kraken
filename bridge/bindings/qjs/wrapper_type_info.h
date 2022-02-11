@@ -31,7 +31,7 @@ class WrapperTypeInfo final {
   const char* className{nullptr};
   const WrapperTypeInfo* parent_class{nullptr};
   JSClassCall* callFunc{nullptr};
-  JSClassExoticMethods *exoticMethods{nullptr};
+  JSClassExoticMethods* exoticMethods{nullptr};
   JSClassID classId{0};
 };
 

@@ -3,8 +3,8 @@
  * Author: Kraken Team.
  */
 
-#include "bindings/qjs/qjs_blob.h"
 #include "blob.h"
+#include "bindings/qjs/qjs_blob.h"
 
 namespace kraken {
 
@@ -93,7 +93,7 @@ uint8_t* Blob::bytes() {
 void Blob::trace(GCVisitor* visitor) const {}
 void Blob::dispose() const {}
 
-Blob::Blob(JSContext* ctx): ScriptWrappable(ctx) {}
+Blob::Blob(JSContext* ctx) : ScriptWrappable(ctx) {}
 Blob::Blob(JSContext* pContext, std::vector<uint8_t> vector) {}
 
 }  // namespace kraken
